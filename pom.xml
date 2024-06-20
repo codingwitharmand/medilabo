@@ -13,6 +13,10 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>medilabo</name>
     <description>medilabo</description>
+
+    <modules>
+        <module>medilabo-back</module>
+    </modules>
     <url/>
     <licenses>
         <license/>
