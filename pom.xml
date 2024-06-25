@@ -16,6 +16,7 @@
 
     <modules>
         <module>medilabo-back</module>
+        <module>medilabo-gateway</module>
     </modules>
     <url/>
     <licenses>

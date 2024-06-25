@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: medialabo-gateway
+
+app:
+  users:
+    - username: user
+      password: password123
+      role: USER
+    - username: admin
+      password: admin123
+      role: ADMIN
+
+microservices:
+  backend:
+    server-url: http://localhost
+    port: 8081
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          context:
+            properties: DEBUG
+
+
