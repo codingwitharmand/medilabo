@@ -1,4 +1,4 @@
-package com.cwa.medilaboback;
+package com.cwa.medilaboback.exception;
 
 public class ApiException extends RuntimeException {
 

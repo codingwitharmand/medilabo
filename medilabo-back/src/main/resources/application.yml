@@ -1,6 +1,7 @@
 spring.application.name: medilabo-back
-  
-  
+server:
+  port: 8081
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/${spring.application.name}

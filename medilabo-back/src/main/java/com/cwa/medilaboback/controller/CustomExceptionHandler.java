@@ -1,10 +1,11 @@
-package com.cwa.medilaboback;
+package com.cwa.medilaboback.controller;
 
+import com.cwa.medilaboback.ApiError;
+import com.cwa.medilaboback.exception.ApiException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.time.LocalDateTime;
 
@@ -12,7 +13,6 @@ import java.time.LocalDateTime;
 public class CustomExceptionHandler {
 
     @ExceptionHandler(ApiException.class)
-    @ResponseStatus(code = HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<ApiError> handleApiException(ApiException e) {
         ApiError apiError = ApiError.builder()
                 .message(e.getMessage())

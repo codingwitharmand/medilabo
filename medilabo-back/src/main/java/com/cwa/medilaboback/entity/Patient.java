@@ -1,4 +1,4 @@
-package com.cwa.medilaboback;
+package com.cwa.medilaboback.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
