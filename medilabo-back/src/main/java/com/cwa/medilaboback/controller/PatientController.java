@@ -16,6 +16,7 @@ import java.util.Optional;
 public class PatientController {
 
     private final PatientRepository patientRepository;
+    private static final String USER_NOT_FOUND_MESSAGE = "User not found with id: %s";
 
     @GetMapping
     public ResponseEntity<List<Patient>> getAllPatients() {
@@ -26,7 +27,7 @@ public class PatientController {
     public ResponseEntity<Patient> getPatientById(@PathVariable Long id) {
         Optional<Patient> optionalPatient = patientRepository.findById(id);
 
-        return optionalPatient.map(ResponseEntity::ok).orElseThrow(() -> new ApiException("User not found with id: " + id));
+        return optionalPatient.map(ResponseEntity::ok).orElseThrow(() -> new ApiException(String.format(USER_NOT_FOUND_MESSAGE, id)));
     }
 
     @PostMapping
@@ -44,6 +45,16 @@ public class PatientController {
             patientRepository.save(updatedPatient);
             return ResponseEntity.ok(updatedPatient);
         }
-        throw new ApiException("User not found with id: " + id);
+        throw new ApiException(String.format(USER_NOT_FOUND_MESSAGE, id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletePatient(@PathVariable Long id) {
+        Optional<Patient> optionalPatient = patientRepository.findById(id);
+        if (optionalPatient.isPresent()) {
+            patientRepository.delete(optionalPatient.get());
+            return ResponseEntity.ok().build();
+        }
+        throw new ApiException(String.format(USER_NOT_FOUND_MESSAGE, id));
     }
 }

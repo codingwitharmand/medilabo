@@ -15,6 +15,7 @@ microservices:
   backend:
     server-url: http://localhost
     port: 8081
+    api-path: /api/patients
 
 logging:
   level:
