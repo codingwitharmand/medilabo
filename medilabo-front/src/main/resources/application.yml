@@ -1,0 +1,9 @@
+spring.application.name: medilabo-front
+server.port: 8082
+
+app:
+  username: user
+  password: password123
+
+gateway:
+  server-url: http://localhost:8080
