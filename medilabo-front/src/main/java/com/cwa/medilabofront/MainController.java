@@ -58,4 +58,10 @@ public class MainController {
         gatewayClient.deletePatient(id);
         return REDIRECT;
     }
+
+    @GetMapping("/error")
+    public String error(Model model) {
+        model.addAttribute("error", new Error());
+        return "error";
+    }
 }
