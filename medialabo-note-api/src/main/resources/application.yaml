@@ -1,0 +1,14 @@
+spring.application.name: medialabo-note-api
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: medilabo
+server:
+  port: 8083
+
+logging:
+  level:
+    org.springframework.security: TRACE
